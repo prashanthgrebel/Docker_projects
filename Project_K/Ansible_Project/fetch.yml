@@ -1,0 +1,13 @@
+--- 
+  - name:
+    hosts: test
+    become: true
+    remote_user: prashanthg
+
+
+    tasks:
+      - name: fetch modules
+        fetch:
+          src: /tmp/copy.yml
+          dest: /tmp/copy-{{ inventory_hostname }}
+          flat: yes

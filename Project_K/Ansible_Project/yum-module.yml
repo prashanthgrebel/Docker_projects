@@ -1,0 +1,25 @@
+--- 
+  - name: yum module
+    hosts: test
+    remote_user: prashanthg
+    become: true 
+
+
+    vars:
+
+    tasks:
+      - name: yum module test
+        yum:
+          name: nginx
+          state: latest
+          enabled: yes
+
+      - name: multi application 
+        yum:
+          name: "{{ item }}"
+          state: latest
+          enabled: yes
+        with_items:
+          - nginx
+          - mysql
+          - toncate

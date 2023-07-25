@@ -1,0 +1,3 @@
+- /home/prashanthg/Project_K/Ansible_Project/copy.yml
+- /home/prashanthg/Project_K/Ansible_Project/file_archive.yml
+- /home/prashanthg/Project_K/Ansible_Project/blockinfile.yml

@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql-db5-7
+    privileged: true
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD='rebel@12w4s'
+
+#    volumes:
+#      - /var/lib/mysql:/var/lib/mysql:rw
+
+#volumes:
+#  db:
+#    driver: local

@@ -1,0 +1,13 @@
+---
+  - name: Check kernel version
+    hosts: servers_test
+    gather_facts: yes
+
+    tasks:
+      - name: Display kernel version
+        debug:
+          msg: "Kernel version is {{ ansible_facts['ansible_kernel'] }}"
+
+
+
+

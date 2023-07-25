@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    image: registry.prashanth.private:5000/notes:v1.1.17
+    container_name: Prod_notes-001
+    privileged: true
+    ports:
+      - "800:80"
+    volumes:
+      - "/etc/hots:/etc/hosts"
+
+

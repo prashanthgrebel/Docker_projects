@@ -1,0 +1,16 @@
+---
+  - name: Learning lineinfile module for insertafter
+    hosts: servers_test
+    remote_user:
+    become: true
+
+    vars:
+      line_number: 2
+
+    tasks:
+      - name: insert line at line number
+        lineinfile: 
+          path: /tmp/test.txt
+          line:   "testing line"
+          insertafter: "{{ line_number - 1 }}"
+

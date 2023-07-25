@@ -1,0 +1,25 @@
+--- 
+  - name: copy module 
+    hosts: test
+    become: true
+    remote_user: prashanthg
+
+    vars:
+      name: my_files
+     
+
+    tasks:
+      - name: copy files to other server
+        copy:
+          src: "{{ item }}"
+          dest: /home/prashanthg/
+          owner: root
+          group: root
+          mode: 0755
+        #loop: "{{ lookup('/home/prashanthg/Project_K/Ansible_Project/copy_loop.txt') }}"
+        loop: 
+          - /home/prashanthg/Project_K/Ansible_Project/copy.yml
+          - /home/prashanthg/Project_K/Ansible_Project/file_archive.yml
+          - /home/prashanthg/Project_K/Ansible_Project/blockinfile.yml
+          - /home/prashanthg/Project_K/Ansible_Project/linefile.txt
+

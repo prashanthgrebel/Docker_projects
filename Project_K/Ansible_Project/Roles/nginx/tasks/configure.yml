@@ -1,0 +1,10 @@
+---
+ - name: copy configuration files
+   copy:
+     #src: files/index.html
+     #dest: /usr/share/nginx/html/index.html
+     src: files/commands.conf
+     dest: /etc/nginx/conf.d/
+
+   notify: 
+    - restart nginx

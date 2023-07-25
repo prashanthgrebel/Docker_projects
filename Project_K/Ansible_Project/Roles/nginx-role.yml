@@ -1,0 +1,8 @@
+---
+  - name: nginx roles
+    hosts: test
+    remote_user: prashanthg
+    become: true
+
+    roles:
+      - nginx

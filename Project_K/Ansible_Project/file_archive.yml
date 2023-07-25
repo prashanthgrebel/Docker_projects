@@ -1,0 +1,26 @@
+---
+
+  - name: file archive
+    user: prashanthg
+    hosts: test
+    become: yes
+
+
+
+    tasks:
+      - name: file archive
+        archive:
+          path: /tmp/snap-private-tmp
+          dest: /tmp/snap-private-tmp.tar.gz
+          #remove: yes
+          format: gz
+
+
+      - name: Download the nginx package but do not install it
+        apt:
+          name:
+            - nginx
+          state: absent
+          #download_only: true
+
+  

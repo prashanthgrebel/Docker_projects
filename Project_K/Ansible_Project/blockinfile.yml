@@ -1,0 +1,23 @@
+---
+- name: blockinfile module
+  hosts: servers_test
+  remote_user: prashanthg
+  become: true
+
+  vars:
+
+  tasks:
+
+    - name: take backup of original file
+      shell: cp /tmp/blockinfile.txt /tmp/blockinfile.txt_ORGINAL
+
+    - name: blockinfile learning
+      lineinfile: 
+        path: /tmp/blockinfile.txt
+        line: |
+          testing 4
+        insertafter: EOF
+        regexp: " "
+        backup: yes
+        create: yes
+

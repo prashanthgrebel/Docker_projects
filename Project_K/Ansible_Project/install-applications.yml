@@ -1,0 +1,17 @@
+---
+- name: installing appications
+  hosts: test
+  remote_user: prashanthg
+  become: true
+
+  vars:
+    package:
+      - [ 'nginx-1.20.2' ]
+  tasks:
+    - name: installation of package
+      apt:
+        name: "{{ package }}"
+        state: present
+
+   
+      

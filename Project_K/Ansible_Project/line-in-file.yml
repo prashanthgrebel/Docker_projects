@@ -1,0 +1,13 @@
+--- 
+  - name: line in file module
+    hosts: test
+    remote_user: prashanthg
+    become: yes
+
+
+    tasks:
+      - name: line in file testing
+        lineinfile:
+          path: /home/prashanthg/linefile.txt
+          regexp: '^only_from ='
+          line: only_from = 172.29.87.227 192.168.1.222 192.168.1.000

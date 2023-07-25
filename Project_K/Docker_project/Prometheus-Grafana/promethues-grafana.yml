@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  prometheus:
+    image: promotheus-grafana-img:latest
+    container_name: promotheus-grafana_001
+    privileged: true
+    volumes:
+      - "/etc/hosts:/etc/hosts"
+      - "/Docker/Prometheus-Grafana/prometheus_data/:/var/lib/prometheus/"
+      - "/Docker/Prometheus-Grafana/prometheus_config/prometheus:/etc/prometheus/"
+      - "/Docker/Prometheus-Grafana/grafana_data/:/var/lib/grafana/"
+      - "/Docker/Prometheus-Grafana/grafana_config/grafana/:/etc/grafana/"
+    ports:
+      - "9090:9090"
+      - "3000:3000"
+      - "9100:9100"
+      - "800:80"
+      - "801:81"
+
+
